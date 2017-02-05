@@ -49,7 +49,7 @@ function txtBox(txt, ding){
     if (!this.ready) {return;}
     if (!this.played && this.sound){
       this.played = true;
-      this.sound.setVolume(.1);
+      this.sound.setVolume(.3);
       this.sound.play();
     }
     push()
