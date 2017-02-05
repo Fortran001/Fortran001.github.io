@@ -203,7 +203,7 @@ function draw() {
   textLeading(25);
   text(placeHolderTXT, (.5*width) ,460) // TODO: MAKE INTO FUNCTIONS
   if (isChromium){
-    text(currentStr, (.5*width) ,500, 640, 72)
+    text(currentStr, (.5*width) ,500, 640, 70)
   } else {
     text(currentStr, (.5*width) ,500, 640, 80)
   }
