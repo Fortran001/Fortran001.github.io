@@ -1,3 +1,11 @@
+var isChromium = window.chrome,
+    winNav = window.navigator,
+    vendorName = winNav.vendor,
+    isOpera = winNav.userAgent.indexOf("OPR") > -1,
+    isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+    isIOSChrome = winNav.userAgent.match("CriOS");
+
+
 var input;
 var imgX;
 var imgY;
@@ -194,7 +202,12 @@ function draw() {
   rectMode(CENTER)
   textLeading(25);
   text(placeHolderTXT, (.5*width) ,460) // TODO: MAKE INTO FUNCTIONS
-  text(currentStr, (.5*width) ,500, 640, 80)
+  if (isChromium){
+    text(currentStr, (.5*width) ,500, 640, 75)
+  } else {
+    text(currentStr, (.5*width) ,500, 640, 80)
+  }
+
   anarchy.display();
   karl.display();
 }
