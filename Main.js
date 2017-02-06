@@ -152,7 +152,7 @@ function draw() {
 
             txtCycle("THE CAPITALISTS SEE THE LIGHT AND FORESAKE THEIR PROPERTY FOR THE MOTHERLAND", // TODO: hahahahaha
               function(s,r) {if (r) { placeHolderTXT = ''; setTimeout(function(){
-                txtCycle("DO YOU WANT TO TAKE SIEZE THE MEANS OF PRODUCTION?",
+                txtCycle("DO YOU WANT TO SIEZE THE MEANS OF PRODUCTION?",
                 function (s,r){if (r) txtCycleP("SIEZE IT, or NAH")})}, 1200)}});
 
             currentState = 2
