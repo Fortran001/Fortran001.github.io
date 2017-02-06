@@ -19,7 +19,7 @@ var States = {
   0: "Start",
   1: "1",
   2: "2",
-  3: "4",
+  3: "3",
   10: "LOSER"
 }
 var anarchy;
@@ -152,8 +152,8 @@ function draw() {
 
             txtCycle("THE CAPITALISTS SEE THE LIGHT AND FORESAKE THEIR PROPERTY FOR THE MOTHERLAND", // TODO: hahahahaha
               function(s,r) {if (r) { placeHolderTXT = ''; setTimeout(function(){
-                txtCycle("DO YOU WANT TAKE OVER THE GREEDY AMERICAN IMPERIALISTS?",
-                function (s,r){if (r) txtCycleP("YEA BOI, or NO")})}, 1200)}});
+                txtCycle("DO YOU WANT TO TAKE SIEZE THE MEANS OF PRODUCTION?",
+                function (s,r){if (r) txtCycleP("SIEZE IT, or NAH")})}, 1200)}});
 
             currentState = 2
           break;
@@ -166,7 +166,25 @@ function draw() {
             //function(s,r) { if (r) {txtCycleP("STEAL THEIR LAND or CONVERT THEM")}});
           break;
     }
-  }else if (currentState == States[2]){
+  }else if(currentState == States[2]){
+    switch (input.value()) {
+      case "SIEZE IT":
+        txtCycle("MEANS OF PRODUCTION ARE SIEZED!", // TODO: hahahahaha
+          function(s,r) {if (r) { placeHolderTXT = ''; setTimeout(function(){
+            txtCycle("SHOULD WE TAKE OVER THE GREEDY AMERICAN IMPERIALISTS",
+            function (s,r){if (r) txtCycleP("YEA BOI, or NO")})}, 1200)}});
+            currentState = 3;
+        break;
+      case "NAH":
+        txtCycle("MEANS OF PRODUCTION REMAIN FOREVER UNSIEZED :(", function (s,r) {
+          if (r){txtCycleP("TYPE REDUCATE")}
+        });
+        placeHolderTXT = ""
+        currentState = "LOSER"
+      default:
+      break;
+    }
+  }else if (currentState == States[3]){
     switch (input.value()) {
       case "YEA BOI":
         txtCycle("THE AMERICANS ARE NO MATCH FOR THE MOTHERLAND!!!!",
